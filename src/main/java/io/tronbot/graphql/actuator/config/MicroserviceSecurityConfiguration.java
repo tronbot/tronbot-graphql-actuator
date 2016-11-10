@@ -1,8 +1,8 @@
 package io.tronbot.graphql.actuator.config;
 
-import io.tronbot.graphql.actuator.security.AuthoritiesConstants;
-import io.tronbot.graphql.actuator.security.jwt.JWTConfigurer;
-import io.tronbot.graphql.actuator.security.jwt.TokenProvider;
+import java.util.Properties;
+
+import javax.inject.Inject;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,8 +14,11 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.data.repository.query.SecurityEvaluationContextExtension;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
-import javax.inject.Inject;
+import io.tronbot.graphql.actuator.security.AuthoritiesConstants;
+import io.tronbot.graphql.actuator.security.jwt.JWTConfigurer;
+import io.tronbot.graphql.actuator.security.jwt.TokenProvider;
 
 @Configuration
 @EnableWebSecurity
@@ -51,6 +54,7 @@ public class MicroserviceSecurityConfiguration extends WebSecurityConfigurerAdap
             .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
         .and()
             .authorizeRequests()
+            .antMatchers("/api/authenticate").permitAll()
             .antMatchers("/api/**").authenticated()
             .antMatchers("/management/health").permitAll()
             .antMatchers("/management/**").hasAuthority(AuthoritiesConstants.ADMIN)
@@ -67,4 +71,12 @@ public class MicroserviceSecurityConfiguration extends WebSecurityConfigurerAdap
     public SecurityEvaluationContextExtension securityEvaluationContextExtension() {
         return new SecurityEvaluationContextExtension();
     }
+    
+    @Bean
+    public InMemoryUserDetailsManager inMemoryUserDetailsManager() {
+        final Properties users = new Properties();
+        users.put("user","pass,ROLE_USER,enabled"); //add whatever other user you need
+        return new InMemoryUserDetailsManager(users);
+    }
+ 
 }
