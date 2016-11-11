@@ -2,7 +2,6 @@
 
 Microservice applicaton for generating the graphql schema
 
-This is a "microservice" application intended to be part of a microservice architecture, please refer to the [Doing microservices with JHipster][] page of the documentation for more information.
 
 This application is configured for Service Discovery and Configuration with Consul. On launch, it will refuse to start if it is not able to connect to Consul at [http://localhost:8500](http://localhost:8500). For more information, read our documentation on [Service Discovery and Configuration with Consul][].
 
@@ -63,21 +62,6 @@ Then run:
 
 For more information refer to [Using Docker and Docker-Compose][], this page also contains information on the docker-compose sub-generator (`yo jhipster:docker-compose`), which is able to generate docker configurations for one or several JHipster applications.
 
-## Continuous Integration (optional)
-
-To set up a CI environment, consult the [Setting up Continuous Integration][] page.
-
-[JHipster Homepage and latest documentation]: https://jhipster.github.io
-[JHipster 3.10.0 archive]: https://jhipster.github.io/documentation-archive/v3.10.0
-[Doing microservices with JHipster]: https://jhipster.github.io/documentation-archive/v3.10.0/microservices-architecture/
-[Using JHipster in development]: https://jhipster.github.io/documentation-archive/v3.10.0/development/
-[Service Discovery and Configuration with Consul]: https://jhipster.github.io/documentation-archive/v3.10.0/microservices-architecture/#consul
-[Using Docker and Docker-Compose]: https://jhipster.github.io/documentation-archive/v3.10.0/docker-compose
-[Using JHipster in production]: https://jhipster.github.io/documentation-archive/v3.10.0/production/
-[Running tests page]: https://jhipster.github.io/documentation-archive/v3.10.0/running-tests/
-[Setting up Continuous Integration]: https://jhipster.github.io/documentation-archive/v3.10.0/setting-up-ci/
-
-[Gatling]: http://gatling.io/
 
 
 ## Kafka

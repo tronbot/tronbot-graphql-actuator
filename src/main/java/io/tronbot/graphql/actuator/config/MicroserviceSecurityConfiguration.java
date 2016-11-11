@@ -75,8 +75,9 @@ public class MicroserviceSecurityConfiguration extends WebSecurityConfigurerAdap
     @Bean
     public InMemoryUserDetailsManager inMemoryUserDetailsManager() {
         final Properties users = new Properties();
-        users.put("user","pass,ROLE_USER,enabled"); //add whatever other user you need
-        return new InMemoryUserDetailsManager(users);
+		users.put("user", "password," + AuthoritiesConstants.USER + ",enabled");
+		users.put("admin", "password," + AuthoritiesConstants.ADMIN + ",enabled");
+		return new InMemoryUserDetailsManager(users);
     }
  
 }
