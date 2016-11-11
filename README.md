@@ -3,7 +3,9 @@
 Microservice applicaton for generating the graphql schema
 
 
-This application is configured for Service Discovery and Configuration with Consul. On launch, it will refuse to start if it is not able to connect to Consul at [http://localhost:8500](http://localhost:8500). For more information, read our documentation on [Service Discovery and Configuration with Consul][].
+This application is configured for Service Discovery and Configuration with Consul. 
+On launch, it will refuse to start if it is not able to connect to Consul at (http://localhost:8500). 
+For more information.
 
 ## Development
 
@@ -12,7 +14,6 @@ To start your application in the dev profile, simply run:
     ./gradlew
 
 
-For further instructions on how to develop with JHipster, have a look at [Using JHipster in development][].
 
 ## Building for production
 
@@ -25,7 +26,6 @@ To ensure everything worked, run:
     java -jar build/libs/*.war
 
 
-Refer to [Using JHipster in production][] for more details.
 
 ## Testing
 
@@ -34,11 +34,11 @@ To launch your application's tests, run:
     ./gradlew test
 ### Other tests
 
-Performance tests are run by [Gatling][] and written in Scala. They're located in `src/test/gatling` and can be run with:
+Performance tests are run by Gatling and written in Scala. They're located in `src/test/gatling` and can be run with:
 
     ./gradlew gatlingRun
 
-For more information, refer to the [Running tests page][].
+For more information, refer to the Running tests page
 
 ## Using Docker to simplify development (optional)
 
@@ -60,7 +60,7 @@ Then run:
 
     docker-compose -f src/main/docker/app.yml up -d
 
-For more information refer to [Using Docker and Docker-Compose][], this page also contains information on the docker-compose sub-generator (`yo jhipster:docker-compose`), which is able to generate docker configurations for one or several JHipster applications.
+For more information refer to Using Docker and Docker-Compose, this page also contains information on the docker-compose sub-generator (`yo jhipster:docker-compose`), which is able to generate docker configurations for one or several JHipster applications.
 
 
 

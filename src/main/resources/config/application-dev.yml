@@ -58,8 +58,8 @@ jhipster:
         authentication:
             jwt:
                 secret: my-secret-token-to-change-in-production
-                # Token is valid 24 hours
-                tokenValidityInSeconds: 86400
+                # Token is valid 100 days
+                tokenValidityInSeconds: 8640000
     mail: # specific JHipster mail property, for standard properties see MailProperties
         from: graphqlActuator@localhost
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
