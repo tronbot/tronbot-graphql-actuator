@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import io.tronbot.graphql.actuator.GraphqlActuatorApp;
-import io.tronbot.graphql.actuator.cucumber.CucumberTest;
 
 /**
  * 
