@@ -36,7 +36,7 @@ public class MicroserviceSecurityConfiguration extends WebSecurityConfigurerAdap
             .antMatchers("/bower_components/**")
             .antMatchers("/i18n/**")
             .antMatchers("/content/**")
-            .antMatchers("/swagger-ui/index.html")
+            .antMatchers("/swagger-ui.html")
             .antMatchers("/test/**")
             .antMatchers("/h2-console/**");
     }
@@ -59,6 +59,7 @@ public class MicroserviceSecurityConfiguration extends WebSecurityConfigurerAdap
             .antMatchers("/management/health").permitAll()
             .antMatchers("/management/**").hasAuthority(AuthoritiesConstants.ADMIN)
             .antMatchers("/swagger-resources/configuration/ui").permitAll()
+            .antMatchers("/swagger-ui.html").permitAll()
         .and()
             .apply(securityConfigurerAdapter());
     }

@@ -31,8 +31,8 @@ spring:
         stream:
             kafka:
                 binder:
-                    brokers: 192.168.47.136
-                    zk-nodes: 192.168.47.136
+                    brokers: 192.168.47.131
+                    zk-nodes: 192.168.47.131
             bindings:
                 output:
                     destination: topic-jhipster

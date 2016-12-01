@@ -1,16 +1,14 @@
 package io.tronbot.graphql.actuator.cucumber.stepdefs;
 
-import io.tronbot.graphql.actuator.GraphqlActuatorApp;
-
-import org.springframework.boot.test.SpringApplicationContextLoader;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.web.WebAppConfiguration;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.ResultActions;
 
-@WebAppConfiguration
-@ContextConfiguration(classes = GraphqlActuatorApp.class, loader = SpringApplicationContextLoader.class)
+//@WebAppConfiguration
+//@ContextConfiguration(classes = GraphqlActuatorApp.class, loader = SpringBootContextLoader.class)
+//@SpringBootTest({ "server.port=0", "management.port=0", "spring.profiles.active=dev" })
+@SpringBootTest({ "spring.profiles.active=dev" })
 public abstract class StepDefs {
 
-    protected ResultActions actions;
+	protected ResultActions actions;
 
 }

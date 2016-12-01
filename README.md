@@ -62,7 +62,8 @@ Then run:
 
 For more information refer to Using Docker and Docker-Compose, this page also contains information on the docker-compose sub-generator (`yo jhipster:docker-compose`), which is able to generate docker configurations for one or several JHipster applications.
 
-
+## Consul
+consul agent -dev
 
 ## Kafka
 Win + X, A
