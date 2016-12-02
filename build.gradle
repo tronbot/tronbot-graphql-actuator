@@ -1,6 +1,6 @@
 buildscript {
     repositories {
-        mavenLocal()
+        //mavenLocal()
         mavenCentral()
         jcenter()
         maven { url "http://repo.spring.io/plugins-release" }
@@ -31,7 +31,12 @@ sourceSets {
     main {
     	java { srcDirs = [] }
         groovy {
-            srcDirs = ['src/main/java']
+        	srcDirs = ['src/main/java']
+        	output.classesDir = "$buildDir/classes"
+        }
+    	resources {
+            srcDirs = ['src/main/resources']
+            output.resourcesDir = "$buildDir/classes"
         }
     }
     test {
@@ -135,7 +140,7 @@ configurations {
 }
 
 repositories {
-    mavenLocal()
+    //mavenLocal()
     mavenCentral()
     jcenter()
     maven { url 'http://repo.spring.io/milestone' }
@@ -210,6 +215,8 @@ dependencies {
     compile "io.springfox:springfox-bean-validators:${springfox_version}"
     compile "fr.ippon.spark.metrics:metrics-spark-reporter:${metrics_spark_reporter_version}"
     compile "org.mapstruct:mapstruct-jdk8:${mapstruct_version}"
+	compile "com.orbitz.consul:consul-client:${consul_client_version}"
+    
     testCompile "com.jayway.awaitility:awaitility:${awaility_version}"
     testCompile "com.jayway.jsonpath:json-path"
     testCompile "info.cukes:cucumber-junit:${cucumber_version}"
@@ -229,11 +236,11 @@ dependencies {
 }
 
 clean {
-    delete "target"
+    delete "$buildDir"
 }
 
 task cleanResources(type: Delete) {
-    delete 'build/resources'
+    delete "$buildDir/resources"
 }
 
 task wrapper(type: Wrapper) {
